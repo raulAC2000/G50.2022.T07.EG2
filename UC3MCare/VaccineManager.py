@@ -8,7 +8,15 @@ class VaccineManager:
 
     def ValidateGUID( self, GUID ):
         # PLEASE INCLUDE HERE THE CODE FOR VALIDATING THE GUID
+        import re
+        r = re.compile(r'^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$')
+        res = r.search(GUID)
+        if res is None:
+            return False
+        else:
+            return True
         # RETURN TRUE IF THE GUID IS RIGHT, OR FALSE IN OTHER CASE
+
         return True
 
     def ReadaccessrequestfromJSON(self, fi):
