@@ -159,14 +159,14 @@ bad-names=foo,
 
 # Bad variable names regexes, separated by a comma. If names match any regex,
 # they will always be refused
-bad-names-rgxs=[A-Z],[0-9]*,var*
+bad-names-rgxs=[A-Z],[0-9]*,var*, id*
 
 # Naming style matching correct class attribute names.
 class-attribute-naming-style=any
 
 # Regular expression matching correct class attribute names. Overrides class-
 # attribute-naming-style.
-class-attribute-rgx=__([a-z]+_?[a-z]*)*__
+class-attribute-rgx=__[a-z]+(_[a-z]+)*__
 
 # Naming style matching correct class constant names.
 class-const-naming-style=UPPER_CASE
@@ -194,7 +194,7 @@ const-naming-style=UPPER_CASE
 docstring-min-length=-1
 
 # Naming style matching correct function names.
-function-naming-style=snake_case
+function-naming-style=PascalCase
 
 # Regular expression matching correct function names. Overrides function-
 # naming-style.
@@ -276,7 +276,7 @@ indent-string='    '
 max-line-length=90
 
 # Maximum number of lines in a module.
-max-module-lines=1000
+max-module-lines=900
 
 # Allow the body of a class to be on the same line as the declaration if body
 # contains single statement.
