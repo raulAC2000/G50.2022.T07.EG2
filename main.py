@@ -1,42 +1,56 @@
-from UC3MCare import VaccineManager
 from UC3MCare import VaccineRequest
 import string
+import UC3MCare
 
 #GLOBAL VARIABLES
-letters = string.ascii_letters + string.punctuation + string.digits
-shift = 3
+LETTERS = string.ascii_letters + string.punctuation + string.digits
+SHIFT = 3
 
 
 def Encode(word):
+    """
+    @encodes a word: string, char or integer. As a parameter
+    @param: word
+    @return: encoded
+    @throw:
+    @warning:
+    """
     encoded = ""
     for letter in word:
         if letter == ' ':
             encoded = encoded + ' '
         else:
-            x = (letters.index(letter) + shift) % len(letters)
-            encoded = encoded + letters[x]
+            x_1 = (LETTERS.index(letter) + SHIFT) % len(LETTERS)
+            encoded = encoded + LETTERS[x_1]
     return encoded
 
 def Decode(word):
+    """
+    @decodes a word: string, char or integer. As a parameter
+    @param: word
+    @return: decoded
+    @throw:
+    @warning:
+    """
     encoded = ""
-    for letter in word:
-        if letter == ' ':
+    for letters_1 in word:
+        if letters_1 == ' ':
             encoded = encoded + ' '
         else:
-            x = (letters.index(letter) - shift) % len(letters)
-            encoded = encoded + letters[x]
+            x_1 = (letters_1.index(letters_1) - SHIFT) % len(letters_1)
+            encoded = encoded + letters_1[x_1]
     return encoded
 
-def main():
-    mng = VaccineManager()
+def Main():
+    mng = UC3MCare.VaccineManager()
     res = mng.ReadaccessrequestfromJSON("test.json")
-    strRes = res.__str__()
-    print(strRes)
-    EncodeRes = Encode(strRes)
-    print("Encoded Res "+ EncodeRes)
-    DecodeRes = Decode(EncodeRes)
-    print("Decoded Res: " + DecodeRes)
+    str_res = res.__str__()
+    print(str_res)
+    encode_res = Encode(str_res)
+    print("Encoded Res "+ encode_res)
+    decode_res = Decode(encode_res)
+    print("Decoded Res: " + decode_res)
 
 
 if __name__ == "__main__":
-    main()
+    Main()
