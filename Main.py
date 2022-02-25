@@ -4,12 +4,9 @@
 @email:
 @version: 0.1.0
 @date: 25/02/22
-@warning:
 """
-import UC3MCare
-from UC3MCare import VaccineRequest
 import string
-
+import UC3MCare
 
 #GLOBAL VARIABLES
 LETTERS = string.ascii_letters + string.punctuation + string.digits
@@ -18,10 +15,9 @@ SHIFT = 3
 
 def Encode(word):
     """
-    @encodes a word: string, char or integer. As a parameter
+    @description encodes a word: string, char or integer. As a parameter
     @param: word
     @return: encoded
-    @throw:
     @warning:
     """
     encoded = ""
@@ -51,8 +47,11 @@ def Decode(word):
     return encoded
 
 def Main():
-    mng = UC3MCare.VaccineManager()
-    res = mng.readaccessrequestfromJSON("test.json")
+    """
+    @description Función principal del programa
+    """
+    manager = UC3MCare.VaccineManager()
+    res = manager.readAccessRequestFromJSON("test.json")
     str_res = res.__str__()
     print(str_res)
     encode_res = Encode(str_res)
