@@ -15,7 +15,7 @@ class VaccineRequest:
         self.__phone_number = phone_number
         self.__id_code = id_code
         justnow = datetime.utcnow()
-        self.__time_stamp = datetime.time_stamp(justnow)
+        self.__time_stamp = datetime.timestamp(justnow)
 
     def __str__(self):
         return "VaccineRequest:" + json.dumps(self.__dict__)

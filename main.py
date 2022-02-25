@@ -1,6 +1,7 @@
+import UC3MCare
 from UC3MCare import VaccineRequest
 import string
-import UC3MCare
+
 
 #GLOBAL VARIABLES
 LETTERS = string.ascii_letters + string.punctuation + string.digits

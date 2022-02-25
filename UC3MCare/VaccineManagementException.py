@@ -16,6 +16,7 @@ class VaccineManagementException(Exception):
         @description: Inicia una instancia de la excepción VaccineManagementException
         @param: self
         @param: message
+        :rtype: object
         """
         self.__message__ = message
         super().__init__(self.message)
