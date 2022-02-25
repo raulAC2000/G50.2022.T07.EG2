@@ -159,14 +159,14 @@ bad-names=foo,
 
 # Bad variable names regexes, separated by a comma. If names match any regex,
 # they will always be refused
-bad-names-rgxs=[A-Z],[0-9]*,var*, id*
+bad-names-rgxs=\b[A-Z]\b,\bvar*\b,\bid*\b
 
 # Naming style matching correct class attribute names.
 class-attribute-naming-style=any
 
 # Regular expression matching correct class attribute names. Overrides class-
 # attribute-naming-style.
-class-attribute-rgx=__[a-z]+(_[a-z]+)*__
+class-attribute-rgx=\b__[a-z]+[0-9]*(_[a-z0-9]+)*__\b
 
 # Naming style matching correct class constant names.
 class-const-naming-style=UPPER_CASE
@@ -474,7 +474,7 @@ exclude-protected=_asdict,
                   _make
 
 # List of valid names for the first argument in a class method.
-valid-classmethod-first-arg=cls
+valid-classmethod-first-arg=cls,self
 
 # List of valid names for the first argument in a metaclass class method.
 valid-metaclass-classmethod-first-arg=cls
