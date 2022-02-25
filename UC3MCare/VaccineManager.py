@@ -32,8 +32,8 @@ class VaccineManager:
         @return: True Si el GUID es correcto
         @return: False Si el GUID es incorrecto
         """
-        regex = re.compile(r'^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB]'
-                           r'[0-9A-F]{3}-[0-9A-F]{12}$')
+        regex = \
+            re.compile(r'^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB]-[0-9A-F]{3}-[0-9A-F]{12}$')
         result = regex.search(guid)
         if result is None:
             return False
