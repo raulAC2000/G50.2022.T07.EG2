@@ -1,3 +1,11 @@
+"""
+@description: Archivo de ejecución principal
+@author: UC3M
+@email:
+@version: 0.1.0
+@date: 25/02/22
+@warning:
+"""
 import UC3MCare
 from UC3MCare import VaccineRequest
 import string
@@ -44,7 +52,7 @@ def Decode(word):
 
 def Main():
     mng = UC3MCare.VaccineManager()
-    res = mng.ReadaccessrequestfromJSON("test.json")
+    res = mng.readaccessrequestfromJSON("test.json")
     str_res = res.__str__()
     print(str_res)
     encode_res = Encode(str_res)
